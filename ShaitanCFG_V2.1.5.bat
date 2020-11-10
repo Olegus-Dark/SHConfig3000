@@ -13,9 +13,11 @@ echo.o.`Y8b 888888  dP__Yb  88   88    dP__Yb  88 Y88     Yb      Yb   dP 88 Y88
 echo.8bodP' 88  88 dP""""Yb 88   88   dP""""Yb 88  Y8      YboodP  YbodP  88  Y8 88     88  YboodP        YP    .d8888 `"'  YbodP  
 echo.
 echo.
-
+::Отключаем плановую дефрагментацию дисков через уилл задачи в планирощике
+schtasks /Change /TN \Microsoft\Windows\Defrag\ScheduledDefrag /DISABLE
+::Подключаем posh скрипт для выключения индексации на дисках не трогая службу
+powershell.exe -executionpolicy remotesigned -File "%~dp0indexingOFF.ps1"
 ::=========================НУЛЕВОЙ БЛОК=========================::
-
 
 ::=========================ПЕРВЫЙ БЛОК=========================::
 
